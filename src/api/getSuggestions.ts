@@ -13,6 +13,7 @@ async function getSuggestions({
   toBound,
   fromBound,
   locationOptions,
+  restrictValue
 }: Suggestion): Promise<DadataSuggestion[]> {
   url = url || DEFAULT_URL;
   count = count || 10;
@@ -25,6 +26,7 @@ async function getSuggestions({
     language: locationOptions.language,
     locations: locationOptions.locations,
     locations_boost: locationOptions.locationsBoost,
+    restrict_value: restrictValue
   };
   try {
     const {

@@ -53,23 +53,25 @@ export default {
 
 ### Properties
 
-| Prop  | Required | Type | Description |
-| ------------- | ------------- | ------------- | ------------- |
-| token  | Yes  | string  | Auth token DaData.ru  |
-| placeholder  | No  | string  | Text placeholder  |
-| query  | No  | string  | Initial state input field  |
-| autoload  | No  | boolean  | If `true`, then a request for tips will be initialed in the background in the created hook  |
-| onChange  | No  | function(suggestion: DadataSuggestion) -> void  | Function called when selecting a tooltip  |
-| autocomplete  | No  |  string  |  Autocomplete field |
-| defaultClass  | No  |  string  |  Default class ofr component, default value - `vue-dadata` |
-| classes  | No  |  string  |  Extra classes |
-| inputName  | No  |  string  |  Input name attribute |
-| fromBound  | No  |  string  |  Dadata bound type FROM |
-| toBound  | No  |  string  |  Dadata bound type TO |
-| highlightClassName  | No  |  string  |  CSS class name applied to highlighted text |
-| unhighlightClassName  | No  |  string  |  CSS class name applied to unhighlighted text |
-| highlightTag  | No  |  string  |  Type of tag to wrap around highlighted matches; defaults to `mark` but can also be a component |
-| locationOptions  | No  |  object  |  Location options for choosing cities or countries |
+| Prop                 | Required | Type                                                  | Description                                                                                    |
+|----------------------| ------------- |-------------------------------------------------------|------------------------------------------------------------------------------------------------|
+| token                | Yes  | string                                                | Auth token DaData.ru                                                                           |
+| placeholder          | No  | string                                                | Text placeholder                                                                               |
+| query                | No  | string                                                | Initial state input field                                                                      |
+| autoload             | No  | boolean                                               | If `true`, then a request for tips will be initialed in the background in the created hook     |
+| onChange             | No  | function(suggestion: DadataSuggestion) -> void        | Function called when selecting a tooltip                                                       |
+| autocomplete         | No  | string                                                | Autocomplete field                                                                             |
+| defaultClass         | No  | string                                                | Default class ofr component, default value - `vue-dadata`                                      |
+| classes              | No  | string                                                | Extra classes                                                                                  |
+| inputName            | No  | string                                                | Input name attribute                                                                           |
+| fromBound            | No  | string                                                | Dadata bound type FROM                                                                         |
+| toBound              | No  | string                                                | Dadata bound type TO                                                                           |
+| highlightClassName   | No  | string                                                | CSS class name applied to highlighted text                                                     |
+| unhighlightClassName | No  | string                                                | CSS class name applied to unhighlighted text                                                   |
+| highlightTag         | No  | string                                                | Type of tag to wrap around highlighted matches; defaults to `mark` but can also be a component |
+| locationOptions      | No  | object                                                | Location options for choosing cities or countries                                              |
+| restrictValue        | No  | boolean                                               | NEW! restict value (only cities/streets etc)                                                   |
+| onFetch              | No  | function(suggestion: DadataSuggestion) -> suggestions | NEW! transform function for suggestions                                                        |
 
 
 ## Dependencies

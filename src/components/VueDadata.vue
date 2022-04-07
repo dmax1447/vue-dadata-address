@@ -70,6 +70,7 @@ export default class VueDadata extends Vue {
   @Prop(Boolean) public readonly disabled?: boolean;
   @Prop(String) public readonly fromBound?: BoundsType;
   @Prop(String) public readonly toBound?: BoundsType;
+  @Prop(Boolean) public readonly restrictValue?: boolean;
   @Prop(String) public readonly inputName?: string;
   @Prop({
     type: Object,
@@ -90,6 +91,7 @@ export default class VueDadata extends Vue {
   @Prop(Function) public readonly onChange?: (
     suggestion: DadataSuggestion | null,
   ) => void;
+  @Prop(Function || null) public readonly onFetch?: (suggestion: any) => any;
   @Prop(Function) public readonly validate?: (value: string) => void;
 
   public inputQuery = '';
@@ -194,12 +196,12 @@ export default class VueDadata extends Vue {
         toBound: this.toBound,
         fromBound: this.fromBound,
         locationOptions: this.locationOptions,
+        restrictValue: !!this.restrictValue,
         count,
       };
 
       const suggestions = await getSuggestions(request);
-
-      return suggestions;
+      return this.onFetch ? this.onFetch(suggestions) : suggestions;
     } catch (error) {
       this.$emit('handleError', error);
       return [];

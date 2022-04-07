@@ -12,6 +12,8 @@
       highlight-tag="span"
       :on-change="changed"
       :location-options="locations"
+      :onFetch="this.testCallback"
+      :restrictValue="false"
     ></vue-dadata>
   </div>
 </template>
@@ -27,7 +29,7 @@ import VueDadata from '@/components/VueDadata.vue';
   },
 })
 export default class App extends Vue {
-  public token = '';
+  public token = '50ec6ae0336b066a08c6153c6f4c4762fd42d187';
   public locations = {
     language: 'ru',
     locations: [
@@ -43,7 +45,7 @@ export default class App extends Vue {
   @Ref('dadata') readonly dadata!: any;
 
   public created() {
-    this.token = process.env.VUE_APP_DADATA_API_KEY;
+    this.token = '50ec6ae0336b066a08c6153c6f4c4762fd42d187';
   }
 
   // public handleBlur() {
@@ -57,6 +59,10 @@ export default class App extends Vue {
 
   public changed(payload: any) {
     // console.log('payload', payload);
+  }
+
+  public testCallback (suggestions: object) {
+    return suggestions
   }
 }
 </script>
