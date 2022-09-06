@@ -127,6 +127,10 @@ export default class VueDadata extends Vue {
 
   @Debounce(300)
   public async onInputChange(event: Event) {
+    // eslint-disable-next-line @typescript-eslint/ban-ts-ignore
+    // @ts-ignore
+    // хак для работы на gboard android
+    event.target.composing = false;
     const value: string = (event.target as HTMLInputElement).value;
     this.inputQuery = value;
     this.suggestionsVisible = true;

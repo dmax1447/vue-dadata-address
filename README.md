@@ -8,17 +8,12 @@ It's a vue component for hinting addresses using [DaData.ru](https://dadata.ru).
 [Link to RU documentation](https://github.com/ikloster03/vue-dadata/tree/master/ru/README.md)
 
 ## Install
-
-[npm package](https://www.npmjs.com/package/vue-dadata)
-
+build component with
 ```bash
-$ npm install vue-dadata --save
+yarn prod
 ```
 
-[yarn package](https://yarnpkg.com/en/package/vue-dadata)
-```bash
-$ yarn add vue-dadata
-```
+copy and use vuedadatacomponent.esm.js as vue component
 
 ## Usage
 
@@ -73,6 +68,10 @@ export default {
 | restrictValue        | No  | boolean                                               | NEW! restict value (only cities/streets etc)                                                   |
 | onFetch              | No  | function(suggestion: DadataSuggestion) -> suggestions | NEW! transform function for suggestions                                                        |
 
+## Build component after update
+```bash
+yarn prod
+```
 
 ## Dependencies
 
